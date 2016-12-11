@@ -1,5 +1,29 @@
 /* CSS declarations go here */
 .intro {
-    display: inline-block;
-    margin: auto;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro * {
+    display: block;
+    margin: 0px;
+}
+
+#notify-button {
+    margin: 10px;
+}
+
+.footer {
+    position: absolute;
+    margin: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.75em;
 }
