@@ -1,1 +1,5 @@
 /* CSS declarations go here */
+.intro {
+    display: inline-block;
+    margin: auto;
+}
