@@ -55,7 +55,7 @@
     opacity: 1.0;
     height: 100px;
     width: 100%;
-    transition: height 1500ms 0ms, opacity 1500ms 500ms;
+    transition: height 1500ms 0ms, opacity 1500ms 750ms;
 }
 
 .subscribe.hide {
