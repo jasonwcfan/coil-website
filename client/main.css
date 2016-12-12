@@ -10,11 +10,62 @@
 
 .intro * {
     display: block;
+    max-width: 400px;
     margin: 0px;
 }
 
-#notify-button {
+.main-button {
+    margin: auto;
+}
+
+.main-button.invalid-input {
+    color: red;
+    border-color: red;
+}
+
+.message {
+    opacity: 1.0;
+    height: 72px;
     margin: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: height 1500ms 0ms, opacity 1500ms 0ms, margin 1500ms 0ms;
+}
+
+.message.hide {
+    opacity: 0.0;
+    height: 0px;
+    width: 0px;
+    margin: 0px;
+    transition: height 500ms 500ms, opacity 500ms 0ms, margin 1500ms 0ms;
+}
+
+.subscribe {
+    opacity: 1.0;
+    height: 100px;
+    width: 100%;
+    transition: height 1500ms 0ms, opacity 1500ms 500ms;
+}
+
+.subscribe.hide {
+    opacity: 0.0;
+    height: 0px;
+    width: 0px;
+    margin: 0px;
+    transition: height 500ms 500ms, opacity 500ms 0ms;
+}
+
+.textfield {
+    margin: auto;
+    margin-top: 5px;
+    width: 75%;
+}
+
+.separator {
+    height: 1px;
+    width: 75%;
+    margin: auto;
+    background: #D1D1D1;
 }
 
 .footer {
