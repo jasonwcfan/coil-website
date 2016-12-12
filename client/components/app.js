@@ -8,6 +8,7 @@ class App extends Component {
             subscriberName: '',
             subscriberEmail: '',
             inputValid: true,
+            submitted: false
         }
         this._handleButtonClick = this._handleButtonClick.bind(this);
         this._handleTextfieldChange = this._handleTextfieldChange.bind(this);
@@ -21,17 +22,19 @@ class App extends Component {
                 })
                 return;
             } else {
-                Meteor.call('subscribers.insert', this.state.subscriberName, this.state.subscriberEmail, function(err, result) {
+                Meteor.call('subscribers.insert', this.state.subscriberName, this.state.subscriberEmail, (err, result) => {
                     if (err) {
                         console.log(err);
                     } else {
-                        console.log(result);
+                        this.setState({
+                            submitted: true
+                        })
                     }
                 });
             }
         }
         this.setState({
-            stageIndex: this.state.stageIndex < 3 ?
+            stageIndex: this.state.stageIndex < 2 ?
                 this.state.stageIndex + 1 : this.state.stageIndex
         })
     }
@@ -44,8 +47,6 @@ class App extends Component {
                 return 'Get notified';
             case 2:
                 return 'Submit';
-            case 3:
-                return 'Thank you!';
         }
 
     }
@@ -70,7 +71,7 @@ class App extends Component {
             <div className='intro'>
                 <h1>coil.ink</h1>
                 <p>tattoos x technology</p>
-                <div className='messsagesContainer'>
+                <div className='container'>
                     <p className={infoMessageClasses}>
                         Our mission is to give tattoo and body art studios the technology to make managing their business a breeze, so they can focus on what really matters
                     </p>
@@ -94,9 +95,11 @@ class App extends Component {
                     </div>
                     <button
                         className={submitButtonClasses}
-                        onClick={this._handleButtonClick}>
+                        onClick={this._handleButtonClick}
+                        disabled={this.state.submitted}>
                             {this._getButtonLabel(this.state.stageIndex)}
                     </button>
+                    {this.state.submitted ? <p>Thank you for subscribing!</p> : null}
                 </div>
             </div>
         )

@@ -10,7 +10,7 @@ Meteor.methods({
     'subscribers.insert': function(name, email) {
         console.log(name);
         console.log(email);
-        if (0 < name.length <= 255 && 0 < email.length <= 255) {
+        if (0 < name.length <= 255 && 0 < email.length <= 255 && email.match(/@/)) {
             console.log(2);
             Subscribers.insert({
                 name: sanitizeString(name),
