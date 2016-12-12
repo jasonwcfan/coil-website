@@ -52,6 +52,15 @@
     transition: height 500ms 500ms, opacity 500ms 0ms, margin 1500ms 0ms;
 }
 
+@media (max-device-width: 360px) {
+    .message {
+        height: 96px;
+    }
+    .intro {
+        height: 100vh;
+    }
+}
+
 .subscribe {
     opacity: 1.0;
     height: 100px;
@@ -65,6 +74,13 @@
     width: 0px;
     margin: 0px;
     transition: height 500ms 500ms, opacity 500ms 0ms;
+}
+
+.subscribe.hide * {
+    height: 0px;
+    width: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .textfield {
