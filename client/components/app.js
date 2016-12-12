@@ -73,11 +73,11 @@ class App extends Component {
                 <p>tattoos x technology</p>
                 <div className='container'>
                     <p className={infoMessageClasses}>
-                        Our mission is to give tattoo and body art studios the technology to make managing their business a breeze, so they can focus on what really matters
+                        Our mission is to make the day-to-day management of your body art studio a breeze, so you can focus on what really matters
                     </p>
                     <div className={'separator ' + subscribeMessageClasses}/>
                     <p className={subscribeMessageClasses}>
-                        Enter your name and email below to subscribe to our mailing list. Don't worry, we'll only send you emails about important updates!
+                        Let's talk about how much time you lose each day, and how we can get it back. We'll only send you emails about important stuff
                     </p>
                     <div className={subscribeFieldsClasses}>
                         <input
